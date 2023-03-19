@@ -1,8 +1,9 @@
 import React from 'react';
-import Amounts from './components/amounts';
 
 // components
 import Header from './components/Header';
+import Amounts from './components/amounts';
+import RecentTransactions from './components/RecentTransactions';
 
 function App() {
   return (
@@ -10,8 +11,11 @@ function App() {
       <Header />
 
       <main className=' bg-gray-50 h-screen'>
-        {/* Amounts Blurbs */}
+        {/* Amounts */}
         <Amounts />
+
+        {/* Recent Transactions */}
+        <RecentTransactions />
       </main>
     </>
   );
