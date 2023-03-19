@@ -2,14 +2,23 @@ import React from 'react';
 import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
 import { FaMoneyBill } from 'react-icons/fa';
 
+// hooks
+import useMediaQuery from '../../hooks/useMediaQuery';
+
 // components
 import AmountBlurb from './AmountBlurb';
 
 type Props = {};
 
 const Amounts = (props: Props) => {
+  const isAboveTabletScreen = useMediaQuery('(min-width: 865px)');
+
   return (
-    <section className='flex items-center justify-between w-5/12 max-w-screen-lg mx-auto py-10'>
+    <section
+      className={`flex items-center justify-between w-11/12 max-w-screen-sm mx-auto py-10 ${
+        isAboveTabletScreen ? 'flex-row ' : 'flex-col gap-4 '
+      }`}
+    >
       <AmountBlurb
         type='Account Balance'
         value='9400'
