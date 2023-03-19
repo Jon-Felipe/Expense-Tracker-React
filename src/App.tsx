@@ -3,7 +3,7 @@ import React from 'react';
 // components
 import Header from './components/Header';
 import Amounts from './components/amounts';
-import RecentTransactions from './components/RecentTransactions';
+import Transactions from './components/transactions';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         {/* Amounts */}
         <Amounts />
 
-        {/* Recent Transactions */}
-        <RecentTransactions />
+        {/* Transactions */}
+        <Transactions />
       </main>
     </>
   );
