@@ -18,7 +18,7 @@ const TransactionBlurb = ({
   time,
 }: Props) => {
   return (
-    <article className='flex items-center justify-between bg-white my-6 p-8 rounded-xl shadow'>
+    <article className='flex items-center justify-between bg-white my-4 p-8 rounded-xl shadow'>
       <div>
         <h3>{item}</h3>
         <p>{description}</p>
