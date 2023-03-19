@@ -4,7 +4,7 @@ import NavLink from './NavLink';
 const Header = () => {
   return (
     <header className='h-20 flex items-center justify-between shadow'>
-      <div className='flex items-center justify-between w-full max-w-screen-2xl mx-auto'>
+      <div className='flex items-center justify-between w-full max-w-screen-lg mx-auto'>
         <h1 className='text-3xl font-bold tracking-wide'>Expense Tracker</h1>
 
         <nav>
