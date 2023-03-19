@@ -1,9 +1,35 @@
 import React from 'react';
 
-type Props = {};
+type Props = {
+  id: number;
+  type: string;
+  item: string;
+  description: string;
+  amount: number;
+  time: string;
+};
 
-const TransactionBlurb = (props: Props) => {
-  return <div>TransactionBlurb</div>;
+const TransactionBlurb = ({
+  id,
+  type,
+  item,
+  description,
+  amount,
+  time,
+}: Props) => {
+  return (
+    <article className='flex items-center justify-between bg-white my-6 p-8 rounded-xl shadow'>
+      <div>
+        <h3>{item}</h3>
+        <p>{description}</p>
+      </div>
+
+      <div>
+        <p>${amount}</p>
+        <p>{time}</p>
+      </div>
+    </article>
+  );
 };
 
 export default TransactionBlurb;
