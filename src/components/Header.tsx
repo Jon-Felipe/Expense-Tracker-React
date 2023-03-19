@@ -8,7 +8,7 @@ const Header = () => {
   const isAboveMediumScreen = useMediaQuery('(min-width: 1060px)');
 
   return (
-    <header className='h-20 flex items-center justify-between shadow'>
+    <header className='h-20 flex items-center justify-between'>
       <div className='flex items-center justify-between w-11/12 max-w-screen-lg mx-auto'>
         <h1 className='text-3xl font-bold tracking-wide'>Expense Tracker</h1>
 

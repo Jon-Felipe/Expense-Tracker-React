@@ -5,10 +5,13 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <main>
+    <>
       <Header />
-      <h1>hello world</h1>
-    </main>
+
+      <main className=' bg-gray-50 h-screen'>
+        <h1>hello world</h1>
+      </main>
+    </>
   );
 }
 
