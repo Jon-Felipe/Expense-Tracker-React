@@ -1,4 +1,6 @@
-export const transactions = [
+import ITransactionType from './types';
+
+export const transactions: ITransactionType[] = [
   {
     id: 1,
     transaction: {
