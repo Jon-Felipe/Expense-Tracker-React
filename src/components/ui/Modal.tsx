@@ -4,9 +4,9 @@ type Props = {};
 
 const Modal = (props: Props) => {
   return (
-    <div>
+    <div className='w-screen h-screen bg-gray-200 fixed flex items-center justify-center'>
       {/* Container */}
-      <div>
+      <div className='w-1/2 h-2/3 rounded-lg bg-white shadow flex flex-col p-6'>
         {/* Close Button */}
         <button> X </button>
         {/* Title */}

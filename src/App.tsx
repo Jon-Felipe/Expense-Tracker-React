@@ -10,16 +10,15 @@ function App() {
   return (
     <>
       <Header />
+      {/* Modal */}
+      {/* <Modal /> */}
 
-      <main className=' bg-gray-50 h-screen'>
+      <main>
         {/* Amounts */}
         <Amounts />
 
         {/* Transactions */}
         <Transactions />
-
-        {/* Modal */}
-        <Modal />
       </main>
     </>
   );
