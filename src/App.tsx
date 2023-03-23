@@ -4,6 +4,7 @@ import React from 'react';
 import Header from './components/Header';
 import Amounts from './components/amounts';
 import Transactions from './components/transactions';
+import Modal from './components/ui/Modal';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
 
         {/* Transactions */}
         <Transactions />
+
+        {/* Modal */}
+        <Modal />
       </main>
     </>
   );
