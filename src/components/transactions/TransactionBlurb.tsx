@@ -17,16 +17,23 @@ const TransactionBlurb = ({
   amount,
   time,
 }: Props) => {
+  const isExpense = type === 'expense';
   return (
-    <article className='flex items-center justify-between bg-white my-4 p-8 rounded-xl shadow'>
+    <article className='flex items-center justify-between bg-white my-4 p-6 rounded-xl shadow'>
       <div>
-        <h3>{item}</h3>
-        <p>{description}</p>
+        <h3 className='text-lg font-bold tracking-wide mb-2'>{item}</h3>
+        <p className='text-gray-400 tracking-wider'>{description}</p>
       </div>
 
       <div>
-        <p>${amount}</p>
-        <p>{time}</p>
+        <p
+          className={`${
+            isExpense ? 'text-red-500' : 'text-green-500'
+          } font-bold text-lg text-end mb-2`}
+        >
+          {`${isExpense ? '-' : '+'}$${amount}`}
+        </p>
+        <p className='text-gray-400'>{time}</p>
       </div>
     </article>
   );

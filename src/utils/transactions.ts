@@ -4,7 +4,7 @@ export const transactions: ITransactionType[] = [
   {
     id: 1,
     transaction: {
-      type: 'Expense',
+      type: 'expense',
       item: 'Shopping',
       description: 'Bought some groceries',
       amount: 120,
@@ -14,7 +14,7 @@ export const transactions: ITransactionType[] = [
   {
     id: 2,
     transaction: {
-      type: 'Expense',
+      type: 'expense',
       item: 'Subscription',
       description: 'Paid monthly Netflix subscription',
       amount: 9,
@@ -24,7 +24,7 @@ export const transactions: ITransactionType[] = [
   {
     id: 3,
     transaction: {
-      type: 'Income',
+      type: 'income',
       item: 'Monthly Salary',
       description: 'Recieved monthly salary for June',
       amount: 5500,

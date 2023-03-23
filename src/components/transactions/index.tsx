@@ -6,12 +6,17 @@ import TransactionBlurb from './TransactionBlurb';
 // dummy data
 import { transactions } from '../../utils/transactions';
 import Pill from '../ui/Pill';
+import Button from '../ui/Button';
 
 type Props = {};
 
 const Transactions = (props: Props) => {
   const handleOnClick = () => {
     console.log('Click');
+  };
+
+  const handleAddTransaction = () => {
+    console.log('Add Transaction');
   };
 
   return (
@@ -42,6 +47,14 @@ const Transactions = (props: Props) => {
           />
         );
       })}
+
+      <div className='flex justify-end'>
+        <Button
+          type='button'
+          text='Add Transaction'
+          onClick={handleAddTransaction}
+        />
+      </div>
     </section>
   );
 };
