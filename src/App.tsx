@@ -10,10 +10,11 @@ function App() {
   return (
     <>
       <Header />
-      {/* Modal */}
-      {/* <Modal /> */}
 
       <main>
+        {/* Modal */}
+        {/* <Modal /> */}
+
         {/* Amounts */}
         <Amounts />
 
