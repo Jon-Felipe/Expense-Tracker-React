@@ -3,6 +3,7 @@ import { FaTimes } from 'react-icons/fa';
 
 // components
 import Input from './Input';
+import Button from './Button';
 
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -33,18 +34,23 @@ const Modal = ({ setModalIsOpen }: Props) => {
           <Input type='text' name='category' placeholder='Category' />
           <div className='flex gap-8'>
             <div className='flex-1'>
-              <Input type='text' name='amount' placeholder='Amount' />
+              <Input type='number' name='amount' placeholder='Amount' />
             </div>
             <div className='flex-1'>
-              <Input type='text' name='expense' placeholder='Expense' />
+              <Input type='number' name='expense' placeholder='Expense' />
             </div>
           </div>
           <Input type='text' name='description' placeholder='Description' />
         </div>
         {/* Footer */}
-        <div className='flex justify-end gap-4 mt-4'>
-          <button onClick={handleCloseModal}>Cancel</button>
-          <button>Add Transaction</button>
+        <div className='mt-4 flex justify-end'>
+          <div className='w-1/4'>
+            <Button
+              type='button'
+              text='Add Transaction'
+              onClick={() => console.log('add transaction')}
+            />
+          </div>
         </div>
       </div>
     </div>
