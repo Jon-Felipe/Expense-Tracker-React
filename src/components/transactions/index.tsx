@@ -51,11 +51,13 @@ const Transactions = ({ setModalIsOpen }: Props) => {
       })}
 
       <div className='flex justify-end'>
-        <Button
-          type='button'
-          text='Add Transaction'
-          onClick={handleAddTransaction}
-        />
+        <div className='w-1/4'>
+          <Button
+            type='button'
+            text='Add Transaction'
+            onClick={handleAddTransaction}
+          />
+        </div>
       </div>
     </section>
   );
