@@ -1,6 +1,9 @@
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 
+// components
+import Input from './Input';
+
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -13,12 +16,10 @@ const Modal = ({ setModalIsOpen }: Props) => {
   return (
     <div className='w-screen h-screen bg-gray-100 fixed flex items-center justify-center'>
       {/* Container */}
-      <div className='w-1/3 h-1/2 rounded-lg bg-white shadow flex flex-col p-8'>
+      <div className='w-1/3 rounded-lg bg-white shadow flex flex-col p-8'>
         <div className='flex items-center justify-between'>
           {/* Title */}
-          <div>
-            <h1 className='font-bold text-3xl'>Transaction Details</h1>
-          </div>
+          <h1 className='font-bold text-3xl'>Transaction Details</h1>
           {/* Close Button */}
           <button
             onClick={handleCloseModal}
@@ -28,22 +29,20 @@ const Modal = ({ setModalIsOpen }: Props) => {
           </button>
         </div>
         {/* Body */}
-        <div className='h-full'>
-          <div>
-            <input type='text' placeholder='placeholder text' />
+        <div className='flex flex-col gap-5 mt-8'>
+          <Input type='text' name='category' placeholder='Category' />
+          <div className='flex gap-8'>
+            <div className='flex-1'>
+              <Input type='text' name='amount' placeholder='Amount' />
+            </div>
+            <div className='flex-1'>
+              <Input type='text' name='expense' placeholder='Expense' />
+            </div>
           </div>
-          <div>
-            <input type='text' placeholder='placeholder text' />
-          </div>
-          <div>
-            <input type='text' placeholder='placeholder text' />
-          </div>
-          <div>
-            <input type='text' placeholder='placeholder text' />
-          </div>
+          <Input type='text' name='description' placeholder='Description' />
         </div>
         {/* Footer */}
-        <div className='flex justify-end gap-4'>
+        <div className='flex justify-end gap-4 mt-4'>
           <button onClick={handleCloseModal}>Cancel</button>
           <button>Add Transaction</button>
         </div>
