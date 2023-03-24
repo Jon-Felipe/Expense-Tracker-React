@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // components
 import Header from './components/Header';
@@ -6,23 +6,25 @@ import Amounts from './components/amounts';
 import Transactions from './components/transactions';
 import Modal from './components/ui/Modal';
 
-function App() {
+const App = () => {
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
+
   return (
     <>
       <Header />
 
       <main>
         {/* Modal */}
-        {/* <Modal /> */}
+        {isModalOpen && <Modal setModalIsOpen={setModalOpen} />}
 
         {/* Amounts */}
         <Amounts />
 
         {/* Transactions */}
-        <Transactions />
+        <Transactions setModalIsOpen={setModalOpen} />
       </main>
     </>
   );
-}
+};
 
 export default App;

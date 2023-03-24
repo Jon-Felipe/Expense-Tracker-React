@@ -8,15 +8,17 @@ import { transactions } from '../../utils/transactions';
 import Pill from '../ui/Pill';
 import Button from '../ui/Button';
 
-type Props = {};
+type Props = {
+  setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-const Transactions = (props: Props) => {
+const Transactions = ({ setModalIsOpen }: Props) => {
   const handleOnClick = () => {
     console.log('Click');
   };
 
   const handleAddTransaction = () => {
-    console.log('Add Transaction');
+    setModalIsOpen(true);
   };
 
   return (

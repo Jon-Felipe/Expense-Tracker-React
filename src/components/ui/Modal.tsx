@@ -1,14 +1,20 @@
 import React from 'react';
 
-type Props = {};
+type Props = {
+  setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-const Modal = (props: Props) => {
+const Modal = ({ setModalIsOpen }: Props) => {
+  const handleCloseModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <div className='w-screen h-screen bg-gray-200 fixed flex items-center justify-center'>
       {/* Container */}
       <div className='w-1/2 h-2/3 rounded-lg bg-white shadow flex flex-col p-6'>
         {/* Close Button */}
-        <button> X </button>
+        <button onClick={handleCloseModal}> X </button>
         {/* Title */}
         <div>
           <h1>Add your transaction here</h1>
