@@ -26,13 +26,15 @@ const TransactionModal = ({
       <div className='w-1/3 rounded-lg bg-white shadow flex flex-col p-8'>
         <div className='flex items-center justify-between'>
           {/* Title */}
-          <h1 className='font-bold text-3xl'>Transaction Details</h1>
+          <h1 className='mb-4 text-xl font-medium text-gray-900'>
+            Add Your Transaction Details
+          </h1>
           {/* Close Button */}
           <button
             onClick={handleCloseModal}
-            className='bg-slate-50 p-2 rounded-md shadow'
+            className='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center'
           >
-            <FaTimes className='h-6 w-6' />
+            <FaTimes className='h-5 w-5' />
           </button>
         </div>
         {/* Body */}
@@ -42,8 +44,16 @@ const TransactionModal = ({
               <RadioButton name='Expense' />
               <RadioButton name='Income' />
             </div>
-            <Input type='text' name='category' placeholder='Shopping' />
-            <Input type='number' name='amount' placeholder='35.99' />
+            <Input
+              type='text'
+              name='category'
+              placeholder='Category (Ex. Shopping)'
+            />
+            <Input
+              type='number'
+              name='amount'
+              placeholder='Amount (Ex. 35.99)'
+            />
             <TextArea />
           </div>
           {/* Footer */}
