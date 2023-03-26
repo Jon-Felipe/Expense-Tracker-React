@@ -5,6 +5,7 @@ import { FaTimes } from 'react-icons/fa';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
 import RadioButton from '../ui/RadioButton';
+import TextArea from '../ui/TextArea';
 
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -42,12 +43,8 @@ const TransactionModal = ({
               <RadioButton name='Income' />
             </div>
             <Input type='text' name='category' placeholder='Shopping' />
-            <Input
-              type='text'
-              name='description'
-              placeholder='Bought groceries'
-            />
             <Input type='number' name='amount' placeholder='35.99' />
+            <TextArea />
           </div>
           {/* Footer */}
           <div className='mt-4 flex justify-end'>
