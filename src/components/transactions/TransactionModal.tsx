@@ -7,10 +7,13 @@ import Button from '../ui/Button';
 
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  handleAddTransaction: () => void;
+  handleSubmitTransaction: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
-const TransactionModal = ({ setModalIsOpen, handleAddTransaction }: Props) => {
+const TransactionModal = ({
+  setModalIsOpen,
+  handleSubmitTransaction,
+}: Props) => {
   const handleCloseModal = () => {
     setModalIsOpen(false);
   };
@@ -31,28 +34,26 @@ const TransactionModal = ({ setModalIsOpen, handleAddTransaction }: Props) => {
           </button>
         </div>
         {/* Body */}
-        <div className='flex flex-col gap-5 mt-8'>
-          <Input type='text' name='category' placeholder='Category' />
-          <div className='flex gap-8'>
-            <div className='flex-1'>
-              <Input type='number' name='amount' placeholder='Amount' />
+        <form onSubmit={handleSubmitTransaction}>
+          <div className='flex flex-col gap-5 mt-8'>
+            <Input type='text' name='category' placeholder='Category' />
+            <div className='flex gap-8'>
+              <div className='flex-1'>
+                <Input type='number' name='amount' placeholder='Amount' />
+              </div>
+              <div className='flex-1'>
+                <Input type='number' name='expense' placeholder='Expense' />
+              </div>
             </div>
-            <div className='flex-1'>
-              <Input type='number' name='expense' placeholder='Expense' />
+            <Input type='text' name='description' placeholder='Description' />
+          </div>
+          {/* Footer */}
+          <div className='mt-4 flex justify-end'>
+            <div className='w-1/4'>
+              <Button type='submit' text='Add Transaction' />
             </div>
           </div>
-          <Input type='text' name='description' placeholder='Description' />
-        </div>
-        {/* Footer */}
-        <div className='mt-4 flex justify-end'>
-          <div className='w-1/4'>
-            <Button
-              type='button'
-              text='Add Transaction'
-              onClick={() => handleAddTransaction()}
-            />
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );

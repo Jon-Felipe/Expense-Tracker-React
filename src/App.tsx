@@ -15,7 +15,11 @@ const App = () => {
   const [transactions, setTransactions] =
     useState<ITransactionType[]>(dummyTransactions);
 
-  const handleAddTransaction = () => {
+  const handleSubmitTransaction = (
+    e: React.FormEvent<HTMLFormElement>
+  ): void => {
+    e.preventDefault();
+
     console.log('add transaction');
   };
 
@@ -28,7 +32,7 @@ const App = () => {
         {isModalOpen && (
           <TransactionModal
             setModalIsOpen={setModalOpen}
-            handleAddTransaction={handleAddTransaction}
+            handleSubmitTransaction={handleSubmitTransaction}
           />
         )}
 
