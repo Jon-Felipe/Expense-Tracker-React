@@ -36,16 +36,13 @@ const TransactionModal = ({
         {/* Body */}
         <form onSubmit={handleSubmitTransaction}>
           <div className='flex flex-col gap-5 mt-8'>
-            <Input type='text' name='category' placeholder='Category' />
-            <div className='flex gap-8'>
-              <div className='flex-1'>
-                <Input type='number' name='amount' placeholder='Amount' />
-              </div>
-              <div className='flex-1'>
-                <Input type='number' name='expense' placeholder='Expense' />
-              </div>
-            </div>
-            <Input type='text' name='description' placeholder='Description' />
+            <Input type='text' name='category' placeholder='Shopping' />
+            <Input
+              type='text'
+              name='description'
+              placeholder='Bought groceries'
+            />
+            <Input type='number' name='amount' placeholder='35.99' />
           </div>
           {/* Footer */}
           <div className='mt-4 flex justify-end'>
