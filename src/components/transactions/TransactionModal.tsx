@@ -13,7 +13,9 @@ import { IModalDataType } from '../../utils/types';
 type Props = {
   handleCloseModal: () => void;
   modalValues: IModalDataType;
-  handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   handleSubmitTransaction: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
@@ -61,7 +63,11 @@ const TransactionModal = ({
               handleOnChange={handleChange}
               placeholder='Amount (Ex. 35.99)'
             />
-            <TextArea name='description' value={modalValues.description} />
+            <TextArea
+              name='description'
+              value={modalValues.description}
+              handleOnChange={handleChange}
+            />
           </div>
           {/* Footer */}
           <div className='mt-4 flex justify-end'>

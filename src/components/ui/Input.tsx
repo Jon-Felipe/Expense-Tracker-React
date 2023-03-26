@@ -4,7 +4,9 @@ type Props = {
   type: React.InputHTMLAttributes<HTMLInputElement>['type'];
   name: string;
   value: string;
-  handleOnChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  handleOnChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
   placeholder: string;
 };
 
