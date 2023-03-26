@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Amounts from './components/amounts';
 import Transactions from './components/transactions';
-import Modal from './components/ui/Modal';
+import TransactionModal from './components/transactions/TransactionModal';
 
 // extras
 import ITransactionType from './utils/types';
@@ -20,8 +20,8 @@ const App = () => {
       <Header />
 
       <main>
-        {/* Modal */}
-        {isModalOpen && <Modal setModalIsOpen={setModalOpen} />}
+        {/* Transaction modal */}
+        {isModalOpen && <TransactionModal setModalIsOpen={setModalOpen} />}
 
         {/* Amounts */}
         <Amounts />

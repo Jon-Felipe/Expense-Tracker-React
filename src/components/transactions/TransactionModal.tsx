@@ -2,14 +2,14 @@ import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 
 // components
-import Input from './Input';
-import Button from './Button';
+import Input from '../ui/Input';
+import Button from '../ui/Button';
 
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Modal = ({ setModalIsOpen }: Props) => {
+const TransactionModal = ({ setModalIsOpen }: Props) => {
   const handleCloseModal = () => {
     setModalIsOpen(false);
   };
@@ -57,4 +57,4 @@ const Modal = ({ setModalIsOpen }: Props) => {
   );
 };
 
-export default Modal;
+export default TransactionModal;
