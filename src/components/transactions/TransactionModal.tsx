@@ -7,9 +7,10 @@ import Button from '../ui/Button';
 
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleAddTransaction: () => void;
 };
 
-const TransactionModal = ({ setModalIsOpen }: Props) => {
+const TransactionModal = ({ setModalIsOpen, handleAddTransaction }: Props) => {
   const handleCloseModal = () => {
     setModalIsOpen(false);
   };
@@ -48,7 +49,7 @@ const TransactionModal = ({ setModalIsOpen }: Props) => {
             <Button
               type='button'
               text='Add Transaction'
-              onClick={() => console.log('add transaction')}
+              onClick={() => handleAddTransaction()}
             />
           </div>
         </div>

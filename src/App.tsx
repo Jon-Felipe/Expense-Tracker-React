@@ -15,13 +15,22 @@ const App = () => {
   const [transactions, setTransactions] =
     useState<ITransactionType[]>(dummyTransactions);
 
+  const handleAddTransaction = () => {
+    console.log('add transaction');
+  };
+
   return (
     <>
       <Header />
 
       <main>
         {/* Transaction modal */}
-        {isModalOpen && <TransactionModal setModalIsOpen={setModalOpen} />}
+        {isModalOpen && (
+          <TransactionModal
+            setModalIsOpen={setModalOpen}
+            handleAddTransaction={handleAddTransaction}
+          />
+        )}
 
         {/* Amounts */}
         <Amounts />
