@@ -3,7 +3,7 @@ import React from 'react';
 type Props = {
   text: string;
   type: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const Button = ({ text, type, onClick }: Props) => {
