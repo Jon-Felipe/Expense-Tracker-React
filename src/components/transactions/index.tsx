@@ -6,7 +6,7 @@ import Pill from '../ui/Pill';
 import Button from '../ui/Button';
 
 // extras
-import ITransactionType from '../../utils/types';
+import { ITransactionType } from '../../utils/types';
 
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;

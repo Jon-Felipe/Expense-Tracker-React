@@ -7,19 +7,21 @@ import Transactions from './components/transactions';
 import TransactionModal from './components/transactions/TransactionModal';
 
 // extras
-import ITransactionType from './utils/types';
+import { ITransactionType, IModalDataType } from './utils/types';
 import { transactions as dummyTransactions } from './utils/transactions';
 
-const modalData = {
+const modalData: IModalDataType = {
+  type: '',
   category: '',
   amount: '',
+  description: '',
 };
 
 const App = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [transactions, setTransactions] =
     useState<ITransactionType[]>(dummyTransactions);
-  const [modalValues, setModalValues] = useState(modalData);
+  const [modalValues, setModalValues] = useState<IModalDataType>(modalData);
 
   // Close Modal
   const handleModalClose = () => {

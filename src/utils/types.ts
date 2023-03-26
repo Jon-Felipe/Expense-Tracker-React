@@ -1,4 +1,4 @@
-export default interface ITransactionType {
+export interface ITransactionType {
   id: number;
   transaction: {
     type: string;
@@ -7,4 +7,11 @@ export default interface ITransactionType {
     amount: number;
     time: string;
   };
+}
+
+export interface IModalDataType {
+  type: string;
+  category: string;
+  amount: string;
+  description: string;
 }
