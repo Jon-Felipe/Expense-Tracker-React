@@ -2,17 +2,18 @@ import React from 'react';
 
 // components
 import TransactionBlurb from './TransactionBlurb';
-
-// dummy data
-import { transactions } from '../../utils/transactions';
 import Pill from '../ui/Pill';
 import Button from '../ui/Button';
 
+// extras
+import ITransactionType from '../../utils/types';
+
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  transactions: ITransactionType[];
 };
 
-const Transactions = ({ setModalIsOpen }: Props) => {
+const Transactions = ({ setModalIsOpen, transactions }: Props) => {
   const handleOnClick = () => {
     console.log('Click');
   };

@@ -6,8 +6,14 @@ import Amounts from './components/amounts';
 import Transactions from './components/transactions';
 import Modal from './components/ui/Modal';
 
+// extras
+import ITransactionType from './utils/types';
+import { transactions as dummyTransactions } from './utils/transactions';
+
 const App = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const [transactions, setTransactions] =
+    useState<ITransactionType[]>(dummyTransactions);
 
   return (
     <>
@@ -21,7 +27,10 @@ const App = () => {
         <Amounts />
 
         {/* Transactions */}
-        <Transactions setModalIsOpen={setModalOpen} />
+        <Transactions
+          setModalIsOpen={setModalOpen}
+          transactions={transactions}
+        />
       </main>
     </>
   );
