@@ -4,6 +4,7 @@ import { FaTimes } from 'react-icons/fa';
 // components
 import Input from '../ui/Input';
 import Button from '../ui/Button';
+import RadioButton from '../ui/RadioButton';
 
 type Props = {
   setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,6 +37,8 @@ const TransactionModal = ({
         {/* Body */}
         <form onSubmit={handleSubmitTransaction}>
           <div className='flex flex-col gap-5 mt-8'>
+            <RadioButton />
+            <RadioButton />
             <Input type='text' name='category' placeholder='Shopping' />
             <Input
               type='text'
