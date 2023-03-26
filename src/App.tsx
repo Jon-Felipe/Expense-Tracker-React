@@ -10,17 +10,39 @@ import TransactionModal from './components/transactions/TransactionModal';
 import ITransactionType from './utils/types';
 import { transactions as dummyTransactions } from './utils/transactions';
 
+const modalData = {
+  category: '',
+  amount: '',
+};
+
 const App = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [transactions, setTransactions] =
     useState<ITransactionType[]>(dummyTransactions);
+  const [modalValues, setModalValues] = useState(modalData);
 
+  // Close Modal
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+
+  // Set modal form data
+  const handleModalFormChange = (
+    e: React.FormEvent<HTMLInputElement>
+  ): void => {
+    const name = e.currentTarget.name;
+    const value = e.currentTarget.value;
+
+    setModalValues({ ...modalValues, [name]: value });
+  };
+
+  // Submit modal data
   const handleSubmitTransaction = (
     e: React.FormEvent<HTMLFormElement>
   ): void => {
     e.preventDefault();
 
-    console.log('add transaction');
+    console.log(modalValues);
   };
 
   return (
@@ -31,7 +53,9 @@ const App = () => {
         {/* Transaction modal */}
         {isModalOpen && (
           <TransactionModal
-            setModalIsOpen={setModalOpen}
+            handleCloseModal={handleModalClose}
+            formValues={modalValues}
+            handleChange={handleModalFormChange}
             handleSubmitTransaction={handleSubmitTransaction}
           />
         )}

@@ -3,10 +3,12 @@ import React from 'react';
 type Props = {
   type: React.InputHTMLAttributes<HTMLInputElement>['type'];
   name: string;
+  value: string;
+  handleOnChange: (e: React.FormEvent<HTMLInputElement>) => void;
   placeholder: string;
 };
 
-const Input = ({ type, name, placeholder }: Props) => {
+const Input = ({ type, name, value, handleOnChange, placeholder }: Props) => {
   return (
     <div>
       <label
@@ -18,6 +20,9 @@ const Input = ({ type, name, placeholder }: Props) => {
       <input
         type={type}
         id={name}
+        name={name}
+        value={value}
+        onChange={handleOnChange}
         placeholder={placeholder}
         className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5'
         required

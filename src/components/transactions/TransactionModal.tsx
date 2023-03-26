@@ -8,18 +8,18 @@ import RadioButton from '../ui/RadioButton';
 import TextArea from '../ui/TextArea';
 
 type Props = {
-  setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleCloseModal: () => void;
+  formValues: any;
+  handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
   handleSubmitTransaction: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
 const TransactionModal = ({
-  setModalIsOpen,
+  handleCloseModal,
+  formValues,
+  handleChange,
   handleSubmitTransaction,
 }: Props) => {
-  const handleCloseModal = () => {
-    setModalIsOpen(false);
-  };
-
   return (
     <div className='w-screen h-screen bg-gray-100 fixed flex items-center justify-center'>
       {/* Container */}
@@ -47,11 +47,15 @@ const TransactionModal = ({
             <Input
               type='text'
               name='category'
+              value={formValues.category}
+              handleOnChange={handleChange}
               placeholder='Category (Ex. Shopping)'
             />
             <Input
               type='number'
               name='amount'
+              value={formValues.amount}
+              handleOnChange={handleChange}
               placeholder='Amount (Ex. 35.99)'
             />
             <TextArea />
