@@ -37,8 +37,10 @@ const TransactionModal = ({
         {/* Body */}
         <form onSubmit={handleSubmitTransaction}>
           <div className='flex flex-col gap-5 mt-8'>
-            <RadioButton />
-            <RadioButton />
+            <div className='grid gap-2 grid-cols-2'>
+              <RadioButton name='Expense' />
+              <RadioButton name='Income' />
+            </div>
             <Input type='text' name='category' placeholder='Shopping' />
             <Input
               type='text'
