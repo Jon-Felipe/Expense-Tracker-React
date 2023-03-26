@@ -7,16 +7,19 @@ import Button from '../ui/Button';
 import RadioButton from '../ui/RadioButton';
 import TextArea from '../ui/TextArea';
 
+// extras
+import { IModalDataType } from '../../utils/types';
+
 type Props = {
   handleCloseModal: () => void;
-  formValues: any;
+  modalValues: IModalDataType;
   handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
   handleSubmitTransaction: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
 const TransactionModal = ({
   handleCloseModal,
-  formValues,
+  modalValues,
   handleChange,
   handleSubmitTransaction,
 }: Props) => {
@@ -47,18 +50,18 @@ const TransactionModal = ({
             <Input
               type='text'
               name='category'
-              value={formValues.category}
+              value={modalValues.category}
               handleOnChange={handleChange}
               placeholder='Category (Ex. Shopping)'
             />
             <Input
               type='number'
               name='amount'
-              value={formValues.amount}
+              value={modalValues.amount}
               handleOnChange={handleChange}
               placeholder='Amount (Ex. 35.99)'
             />
-            <TextArea />
+            <TextArea name='description' value={modalValues.description} />
           </div>
           {/* Footer */}
           <div className='mt-4 flex justify-end'>

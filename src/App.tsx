@@ -56,7 +56,7 @@ const App = () => {
         {isModalOpen && (
           <TransactionModal
             handleCloseModal={handleModalClose}
-            formValues={modalValues}
+            modalValues={modalValues}
             handleChange={handleModalFormChange}
             handleSubmitTransaction={handleSubmitTransaction}
           />
