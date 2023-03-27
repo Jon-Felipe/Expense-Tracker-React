@@ -11,7 +11,7 @@ import { ITransactionType, IModalDataType } from './utils/types';
 import { transactions as dummyTransactions } from './utils/transactions';
 
 const modalData: IModalDataType = {
-  type: '',
+  type: 'expense',
   category: '',
   amount: '',
   description: '',
@@ -30,7 +30,7 @@ const App = () => {
 
   // Set modal form data
   const handleModalFormChange = (
-    e: React.FormEvent<HTMLInputElement>
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ): void => {
     const name = e.currentTarget.name;
     const value = e.currentTarget.value;
@@ -43,8 +43,6 @@ const App = () => {
     e: React.FormEvent<HTMLFormElement>
   ): void => {
     e.preventDefault();
-
-    console.log(modalValues);
   };
 
   return (

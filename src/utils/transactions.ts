@@ -1,10 +1,10 @@
-import ITransactionType from './types';
+import { ITransactionType } from './types';
 
 export const transactions: ITransactionType[] = [
   {
     id: 1,
+    type: 'expense',
     transaction: {
-      type: 'expense',
       item: 'Shopping',
       description: 'Bought some groceries',
       amount: 120,
@@ -13,8 +13,8 @@ export const transactions: ITransactionType[] = [
   },
   {
     id: 2,
+    type: 'expense',
     transaction: {
-      type: 'expense',
       item: 'Subscription',
       description: 'Paid monthly Netflix subscription',
       amount: 9,
@@ -23,8 +23,8 @@ export const transactions: ITransactionType[] = [
   },
   {
     id: 3,
+    type: 'income',
     transaction: {
-      type: 'income',
       item: 'Monthly Salary',
       description: 'Recieved monthly salary for June',
       amount: 5500,

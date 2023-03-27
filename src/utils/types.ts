@@ -1,7 +1,7 @@
 export interface ITransactionType {
   id: number;
+  type: 'expense' | 'income';
   transaction: {
-    type: string;
     item: string;
     description: string;
     amount: number;
