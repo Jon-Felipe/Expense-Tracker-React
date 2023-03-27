@@ -47,7 +47,7 @@ const App = () => {
 
     const { type, category, amount, description } = modalValues;
 
-    setTransactions((prevState: any) => {
+    setTransactions((prevState) => {
       return [
         ...prevState,
         {
@@ -56,8 +56,8 @@ const App = () => {
           transaction: {
             item: category,
             description,
-            amount,
-            time: '10:00 AM',
+            amount: +amount,
+            time: '10:00PM',
           },
         },
       ];
