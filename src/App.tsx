@@ -10,8 +10,8 @@ import TransactionModal from './components/transactions/TransactionModal';
 import { ITransactionType, IModalDataType } from './utils/types';
 import { transactions as dummyTransactions } from './utils/transactions';
 
-const modalData: IModalDataType = {
-  type: 'expense',
+const initialModalData: IModalDataType = {
+  type: '',
   category: '',
   amount: '',
   description: '',
@@ -21,7 +21,8 @@ const App = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [transactions, setTransactions] =
     useState<ITransactionType[]>(dummyTransactions);
-  const [modalValues, setModalValues] = useState<IModalDataType>(modalData);
+  const [modalValues, setModalValues] =
+    useState<IModalDataType>(initialModalData);
 
   // Close Modal
   const handleModalClose = () => {
@@ -43,6 +44,26 @@ const App = () => {
     e: React.FormEvent<HTMLFormElement>
   ): void => {
     e.preventDefault();
+
+    const { type, category, amount, description } = modalValues;
+
+    setTransactions((prevState: any) => {
+      return [
+        ...prevState,
+        {
+          id: Math.random(),
+          type,
+          transaction: {
+            item: category,
+            description,
+            amount,
+            time: '10:00 AM',
+          },
+        },
+      ];
+    });
+    setModalValues(initialModalData);
+    setModalOpen(false);
   };
 
   return (
