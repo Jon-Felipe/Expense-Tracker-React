@@ -37,12 +37,12 @@ const Transactions = ({ setModalIsOpen, transactions }: Props) => {
         />
       </div>
       {transactions.map((t) => {
-        const { id, transaction } = t;
+        const { id, type, transaction } = t;
         return (
           <TransactionBlurb
             key={id}
             id={id}
-            type={transaction.type}
+            type={type}
             item={transaction.item}
             description={transaction.description}
             amount={transaction.amount}
