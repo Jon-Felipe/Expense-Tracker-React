@@ -15,3 +15,9 @@ export interface IModalDataType {
   amount: string;
   description: string;
 }
+
+export interface IAmountValues {
+  balance: string;
+  income: string;
+  expenses: string;
+}
