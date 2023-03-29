@@ -22,6 +22,15 @@ const Transactions = ({ setModalIsOpen, transactions }: Props) => {
     setModalIsOpen(true);
   };
 
+  const NoTransactions = () => {
+    return (
+      <div className='flex flex-col items-center justify-center my-14'>
+        <h1 className='text-2xl font-bold'>No transactions were found</h1>
+        <p>Start adding some...</p>
+      </div>
+    );
+  };
+
   return (
     <section className='w-11/12 max-w-screen-sm mx-auto py-5'>
       <div className='flex items-center justify-between'>
@@ -36,20 +45,24 @@ const Transactions = ({ setModalIsOpen, transactions }: Props) => {
           text='View More'
         />
       </div>
-      {transactions.map((t) => {
-        const { id, type, transaction } = t;
-        return (
-          <TransactionBlurb
-            key={id}
-            id={id}
-            type={type}
-            item={transaction.item}
-            description={transaction.description}
-            amount={transaction.amount}
-            time={transaction.time}
-          />
-        );
-      })}
+      {transactions.length > 0 ? (
+        transactions.map((t) => {
+          const { id, type, transaction } = t;
+          return (
+            <TransactionBlurb
+              key={id}
+              id={id}
+              type={type}
+              item={transaction.item}
+              description={transaction.description}
+              amount={transaction.amount}
+              time={transaction.time}
+            />
+          );
+        })
+      ) : (
+        <NoTransactions />
+      )}
 
       <div className='flex justify-end'>
         <div className='w-1/4'>

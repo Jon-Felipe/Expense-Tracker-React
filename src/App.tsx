@@ -19,8 +19,7 @@ const initialModalData: IModalDataType = {
 
 const App = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
-  const [transactions, setTransactions] =
-    useState<ITransactionType[]>(dummyTransactions);
+  const [transactions, setTransactions] = useState<ITransactionType[]>([]);
   const [modalValues, setModalValues] =
     useState<IModalDataType>(initialModalData);
 
