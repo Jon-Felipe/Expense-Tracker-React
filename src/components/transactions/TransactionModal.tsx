@@ -79,6 +79,7 @@ const TransactionModal = ({
               name='description'
               value={modalValues.description}
               handleOnChange={handleChange}
+              required
             />
           </div>
           {/* Footer */}

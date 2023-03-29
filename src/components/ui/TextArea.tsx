@@ -4,9 +4,10 @@ type Props = {
   name: string;
   value: string;
   handleOnChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  required?: React.InputHTMLAttributes<HTMLInputElement>['required'];
 };
 
-const TextArea = ({ name, value, handleOnChange }: Props) => {
+const TextArea = ({ name, value, handleOnChange, required }: Props) => {
   return (
     <div>
       <label
@@ -22,6 +23,7 @@ const TextArea = ({ name, value, handleOnChange }: Props) => {
         onChange={handleOnChange}
         className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300'
         placeholder='Write your description here...'
+        required={required}
       ></textarea>
     </div>
   );
