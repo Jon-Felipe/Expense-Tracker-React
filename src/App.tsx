@@ -11,6 +11,12 @@ import TransactionModal from './components/transactions/TransactionModal';
 // extras
 import { ITransactionType, IModalDataType } from './utils/types';
 
+const initialTransactionValues = {
+  balance: 0,
+  income: 0,
+  expenses: 0,
+};
+
 const initialModalData: IModalDataType = {
   type: '',
   category: '',
@@ -20,6 +26,9 @@ const initialModalData: IModalDataType = {
 
 const App = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const [transactionValues, setTransactionValues] = useState(
+    initialTransactionValues
+  );
   const [transactions, setTransactions] = useState<ITransactionType[]>([]);
   const [modalValues, setModalValues] =
     useState<IModalDataType>(initialModalData);
