@@ -12,9 +12,9 @@ import TransactionModal from './components/transactions/TransactionModal';
 import { ITransactionType, IModalDataType } from './utils/types';
 
 const initialTransactionValues = {
-  balance: 0,
-  income: 0,
-  expenses: 0,
+  balance: '0',
+  income: '0',
+  expenses: '0',
 };
 
 const initialModalData: IModalDataType = {
@@ -97,7 +97,11 @@ const App = () => {
         )}
 
         {/* Amounts */}
-        <Amounts />
+        <Amounts
+          balance={transactionValues.income}
+          income={transactionValues.income}
+          expense={transactionValues.expenses}
+        />
 
         {/* Transactions */}
         <Transactions
