@@ -49,7 +49,7 @@ const App = () => {
     const { type, category, amount, description } = modalValues;
 
     if (!type || !category || !amount || !description) {
-      alert('Please fill in the fields');
+      toast.error('Please fill in all fields');
       return;
     }
 
@@ -70,6 +70,7 @@ const App = () => {
     });
     setModalValues(initialModalData);
     setModalOpen(false);
+    toast.success('Transaction added');
   };
 
   return (
