@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 // components
 import Header from './components/Header';
@@ -94,6 +95,7 @@ const App = () => {
           transactions={transactions}
         />
       </main>
+      <ToastContainer position='top-center' />
     </>
   );
 };
