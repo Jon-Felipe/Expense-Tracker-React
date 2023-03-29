@@ -65,6 +65,7 @@ const TransactionModal = ({
               value={modalValues.category}
               handleOnChange={handleChange}
               placeholder='Category (Ex. Shopping)'
+              required
             />
             <Input
               type='number'
@@ -72,6 +73,7 @@ const TransactionModal = ({
               value={modalValues.amount}
               handleOnChange={handleChange}
               placeholder='Amount (Ex. 35.99)'
+              required
             />
             <TextArea
               name='description'

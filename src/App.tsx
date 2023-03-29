@@ -46,6 +46,11 @@ const App = () => {
 
     const { type, category, amount, description } = modalValues;
 
+    if (!type || !category || !amount || !description) {
+      alert('Please fill in the fields');
+      return;
+    }
+
     setTransactions((prevState: ITransactionType[]) => {
       return [
         ...prevState,
