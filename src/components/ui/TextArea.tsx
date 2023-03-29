@@ -4,7 +4,7 @@ type Props = {
   name: string;
   value: string;
   handleOnChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  required?: React.InputHTMLAttributes<HTMLInputElement>['required'];
+  required?: React.InputHTMLAttributes<HTMLTextAreaElement>['required'];
 };
 
 const TextArea = ({ name, value, handleOnChange, required }: Props) => {
