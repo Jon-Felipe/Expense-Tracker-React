@@ -10,7 +10,6 @@ import TransactionModal from './components/transactions/TransactionModal';
 
 // extras
 import { ITransactionType, IModalDataType } from './utils/types';
-import { transactions as dummyTransactions } from './utils/transactions';
 
 const initialModalData: IModalDataType = {
   type: '',
