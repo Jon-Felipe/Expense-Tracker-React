@@ -47,7 +47,7 @@ const App = () => {
 
     const { type, category, amount, description } = modalValues;
 
-    setTransactions((prevState) => {
+    setTransactions((prevState: ITransactionType[]) => {
       return [
         ...prevState,
         {
