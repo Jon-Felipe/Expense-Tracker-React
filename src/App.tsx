@@ -9,9 +9,9 @@ import Transactions from './components/transactions';
 import TransactionModal from './components/transactions/TransactionModal';
 
 // extras
-import { ITransactionType, IModalDataType } from './utils/types';
+import { ITransactionType, IModalDataType, IAmountValues } from './utils/types';
 
-const initialAmountValues = {
+const initialAmountValues: IAmountValues = {
   balance: '0',
   income: '0',
   expenses: '0',
@@ -26,7 +26,8 @@ const initialModalData: IModalDataType = {
 
 const App = () => {
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
-  const [amountValues, setAmountValues] = useState(initialAmountValues);
+  const [amountValues, setAmountValues] =
+    useState<IAmountValues>(initialAmountValues);
   const [transactions, setTransactions] = useState<ITransactionType[]>([]);
   const [modalValues, setModalValues] =
     useState<IModalDataType>(initialModalData);
