@@ -5,9 +5,10 @@ type Props = {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   text: string;
+  required?: React.InputHTMLAttributes<HTMLInputElement>['required'];
 };
 
-const RadioButton = ({ name, value, text, onChange }: Props) => {
+const RadioButton = ({ name, value, text, onChange, required }: Props) => {
   return (
     <div className='flex items-center pl-4 border border-gray-200 rounded'>
       <input
@@ -16,6 +17,7 @@ const RadioButton = ({ name, value, text, onChange }: Props) => {
         value={value}
         onChange={onChange}
         className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300'
+        required={required}
       />
       <label
         htmlFor={name}
