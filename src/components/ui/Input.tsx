@@ -1,21 +1,19 @@
 import React from 'react';
 
 type Props = {
-  type: React.InputHTMLAttributes<HTMLInputElement>['type'];
+  type: React.HTMLInputTypeAttribute;
   name: string;
-  value: string;
-  handleOnChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
+  value: string | number | readonly string[];
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
-  required?: React.InputHTMLAttributes<HTMLInputElement>['required'];
+  required: boolean;
 };
 
 const Input = ({
   type,
   name,
   value,
-  handleOnChange,
+  onChange,
   placeholder,
   required,
 }: Props) => {
@@ -32,7 +30,7 @@ const Input = ({
         id={name}
         name={name}
         value={value}
-        onChange={handleOnChange}
+        onChange={onChange}
         placeholder={placeholder}
         className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5'
         required={required}

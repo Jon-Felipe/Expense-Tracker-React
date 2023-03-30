@@ -63,7 +63,7 @@ const TransactionModal = ({
               type='text'
               name='category'
               value={modalValues.category}
-              handleOnChange={handleChange}
+              onChange={handleChange}
               placeholder='Category (Ex. Shopping)'
               required
             />
@@ -71,7 +71,7 @@ const TransactionModal = ({
               type='number'
               name='amount'
               value={modalValues.amount.toString()}
-              handleOnChange={handleChange}
+              onChange={handleChange}
               placeholder='Amount (Ex. 35.99)'
               required
             />
