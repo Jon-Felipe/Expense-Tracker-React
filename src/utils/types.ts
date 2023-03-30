@@ -12,12 +12,12 @@ export interface ITransactionType {
 export interface IModalDataType {
   type: string;
   category: string;
-  amount: string;
+  amount: number;
   description: string;
 }
 
 export interface IAmountValues {
-  balance: string;
-  income: string;
-  expenses: string;
+  balance: number;
+  income: number;
+  expenses: number;
 }
