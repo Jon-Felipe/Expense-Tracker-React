@@ -70,7 +70,7 @@ const TransactionModal = ({
             <Input
               type='number'
               name='amount'
-              value={modalValues.amount}
+              value={modalValues.amount.toString()}
               handleOnChange={handleChange}
               placeholder='Amount (Ex. 35.99)'
               required
