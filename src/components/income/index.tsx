@@ -22,7 +22,9 @@ const Income = (props: Props) => {
           className='w-full border-2 px-4 py-2 rounded-lg'
         />
       </div>
-      <button className='bg-gray-900 text-white px-4 py-2'>Add Income</button>
+      <button className='bg-gray-900 text-white px-4 py-2 rounded-lg'>
+        Add Income
+      </button>
     </article>
   );
 };

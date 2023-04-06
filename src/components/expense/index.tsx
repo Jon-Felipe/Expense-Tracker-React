@@ -24,7 +24,7 @@ const Expense = (props: Props) => {
           />
         </div>
       </div>
-      <button className='bg-gray-900 text-white px-4 py-2'>
+      <button className='bg-gray-900 text-white px-4 py-2 rounded-lg'>
         Create Expense
       </button>
     </article>
