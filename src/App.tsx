@@ -7,6 +7,8 @@ import Header from './components/Header';
 import Amounts from './components/amounts';
 import Transactions from './components/transactions';
 import TransactionModal from './components/transactions/TransactionModal';
+import Income from './components/income';
+import Expense from './components/expense';
 
 // extras
 import { ITransactionType, IModalDataType, IAmountValues } from './utils/types';
@@ -101,6 +103,9 @@ const App = () => {
           income={amountValues.income}
           expense={amountValues.expenses}
         />
+
+        <Income />
+        <Expense />
 
         {/* Transactions */}
         <Transactions
