@@ -9,9 +9,9 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import AmountBlurb from './AmountBlurb';
 
 type Props = {
-  balance: string;
-  income: string;
-  expense: string;
+  balance: number;
+  income: number;
+  expense: number;
 };
 
 const Amounts = ({ balance, income, expense }: Props) => {
@@ -25,13 +25,13 @@ const Amounts = ({ balance, income, expense }: Props) => {
     >
       <AmountBlurb
         type='Account Balance'
-        value={balance}
+        value={balance.toString()}
         icon={<FaMoneyBill className='w-10 h-10' />}
         typeColour='text-gray-400'
       />
       <AmountBlurb
         type='Income'
-        value={income}
+        value={income.toString()}
         icon={<FiArrowDown className='w-10 h-10 text-green-500' />}
         typeColour='text-white'
         bgColour='bg-green-500'
@@ -39,7 +39,7 @@ const Amounts = ({ balance, income, expense }: Props) => {
       />
       <AmountBlurb
         type='Expenses'
-        value={expense}
+        value={expense.toString()}
         icon={<FiArrowUp className='w-10 h-10 text-red-500' />}
         typeColour='text-white'
         bgColour='bg-red-500'

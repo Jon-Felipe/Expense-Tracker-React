@@ -13,15 +13,15 @@ import Expense from './components/expense';
 import { ITransactionType, IModalDataType, IAmountValues } from './utils/types';
 
 const initialAmountValues: IAmountValues = {
-  balance: '0',
-  income: '0',
-  expenses: '0',
+  balance: 0,
+  income: 0,
+  expenses: 0,
 };
 
 const initialModalData: IModalDataType = {
   type: '',
   category: '',
-  amount: '',
+  amount: 0,
   description: '',
 };
 
