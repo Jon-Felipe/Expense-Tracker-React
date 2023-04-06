@@ -86,7 +86,7 @@ const App = () => {
           expense={amountValues.expenses}
         />
 
-        <div className='flex justify-center gap-4 max-w-screen-lg mx-auto'>
+        <div className='max-w-screen-lg mx-auto px-4 flex flex-col gap-4 md:flex-row '>
           <Income />
           <Expense />
         </div>
