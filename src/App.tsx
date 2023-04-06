@@ -10,7 +10,7 @@ import Income from './components/income';
 import Expense from './components/expense';
 
 // extras
-import { ITransactionType, IModalDataType, IAmountValues } from './utils/types';
+import { ITransactionType, IAmountValues } from './utils/types';
 
 const initialAmountValues: IAmountValues = {
   balance: 0,
@@ -18,61 +18,10 @@ const initialAmountValues: IAmountValues = {
   expenses: 0,
 };
 
-const initialModalData: IModalDataType = {
-  type: '',
-  category: '',
-  amount: 0,
-  description: '',
-};
-
 const App = () => {
   const [amountValues, setAmountValues] =
     useState<IAmountValues>(initialAmountValues);
   const [transactions, setTransactions] = useState<ITransactionType[]>([]);
-  const [modalValues, setModalValues] =
-    useState<IModalDataType>(initialModalData);
-
-  // Set modal form data
-  const handleModalFormChange = (
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
-  ): void => {
-    const name = e.currentTarget.name;
-    const value = e.currentTarget.value;
-
-    setModalValues({ ...modalValues, [name]: value });
-  };
-
-  // Submit modal data
-  const handleSubmitTransaction = (
-    e: React.FormEvent<HTMLFormElement>
-  ): void => {
-    e.preventDefault();
-
-    const { type, category, amount, description } = modalValues;
-
-    if (!type || !category || !amount || !description) {
-      toast.error('Please fill in all fields');
-      return;
-    }
-
-    setTransactions((prevState: ITransactionType[]) => {
-      return [
-        ...prevState,
-        {
-          id: Math.random(),
-          type,
-          transaction: {
-            item: category,
-            description,
-            amount: +amount,
-            time: '10:00PM',
-          },
-        },
-      ];
-    });
-    setModalValues(initialModalData);
-    toast.success('Transaction added');
-  };
 
   return (
     <>
