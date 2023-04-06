@@ -104,8 +104,10 @@ const App = () => {
           expense={amountValues.expenses}
         />
 
-        <Income />
-        <Expense />
+        <div className='flex justify-center gap-4 max-w-screen-lg mx-auto'>
+          <Income />
+          <Expense />
+        </div>
 
         {/* Transactions */}
         <Transactions
