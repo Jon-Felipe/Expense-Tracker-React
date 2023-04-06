@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Amounts from './components/amounts';
 import Transactions from './components/transactions';
-import TransactionModal from './components/transactions/TransactionModal';
 import Income from './components/income';
 import Expense from './components/expense';
 
@@ -27,17 +26,11 @@ const initialModalData: IModalDataType = {
 };
 
 const App = () => {
-  const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const [amountValues, setAmountValues] =
     useState<IAmountValues>(initialAmountValues);
   const [transactions, setTransactions] = useState<ITransactionType[]>([]);
   const [modalValues, setModalValues] =
     useState<IModalDataType>(initialModalData);
-
-  // Close Modal
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
 
   // Set modal form data
   const handleModalFormChange = (
@@ -78,7 +71,6 @@ const App = () => {
       ];
     });
     setModalValues(initialModalData);
-    setModalOpen(false);
     toast.success('Transaction added');
   };
 
@@ -87,16 +79,6 @@ const App = () => {
       <Header />
 
       <main>
-        {/* Transaction modal */}
-        {isModalOpen && (
-          <TransactionModal
-            handleCloseModal={handleModalClose}
-            modalValues={modalValues}
-            handleChange={handleModalFormChange}
-            handleSubmitTransaction={handleSubmitTransaction}
-          />
-        )}
-
         {/* Amounts */}
         <Amounts
           balance={amountValues.income}
@@ -110,10 +92,7 @@ const App = () => {
         </div>
 
         {/* Transactions */}
-        <Transactions
-          setModalIsOpen={setModalOpen}
-          transactions={transactions}
-        />
+        <Transactions transactions={transactions} />
       </main>
       <ToastContainer position='top-center' />
     </>

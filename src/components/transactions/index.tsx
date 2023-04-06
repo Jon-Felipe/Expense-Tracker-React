@@ -9,17 +9,12 @@ import Button from '../ui/Button';
 import { ITransactionType } from '../../utils/types';
 
 type Props = {
-  setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   transactions: ITransactionType[];
 };
 
-const Transactions = ({ setModalIsOpen, transactions }: Props) => {
+const Transactions = ({ transactions }: Props) => {
   const handleOnClick = () => {
     console.log('Click');
-  };
-
-  const handleAddTransaction = () => {
-    setModalIsOpen(true);
   };
 
   const NoTransactions = () => {
@@ -63,16 +58,6 @@ const Transactions = ({ setModalIsOpen, transactions }: Props) => {
       ) : (
         <NoTransactions />
       )}
-
-      <div className='flex justify-end'>
-        <div className='w-1/4'>
-          <Button
-            type='button'
-            text='Add Transaction'
-            onClick={handleAddTransaction}
-          />
-        </div>
-      </div>
     </section>
   );
 };
