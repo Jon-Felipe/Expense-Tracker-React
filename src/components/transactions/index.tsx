@@ -3,7 +3,6 @@ import React from 'react';
 // components
 import TransactionBlurb from './TransactionBlurb';
 import Pill from '../ui/Pill';
-import Button from '../ui/Button';
 
 // extras
 import { ITransactionType } from '../../utils/types';
