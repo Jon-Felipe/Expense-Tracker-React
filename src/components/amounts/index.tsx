@@ -2,9 +2,6 @@ import React from 'react';
 import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
 import { FaMoneyBill } from 'react-icons/fa';
 
-// hooks
-import useMediaQuery from '../../hooks/useMediaQuery';
-
 // components
 import AmountBlurb from './AmountBlurb';
 
@@ -15,8 +12,6 @@ type Props = {
 };
 
 const Amounts = ({ balance, income, expense }: Props) => {
-  const isAboveTabletScreen = useMediaQuery('(min-width: 865px)');
-
   return (
     <section className='flex flex-col gap-4 md:flex-row max-w-screen-md mx-auto my-10'>
       <AmountBlurb
