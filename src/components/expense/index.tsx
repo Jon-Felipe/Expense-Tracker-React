@@ -2,7 +2,7 @@ import React from 'react';
 
 type Props = {};
 
-const Expense = (props: Props) => {
+const ExpenseForm = (props: Props) => {
   return (
     <article className='w-full border-2 border-dashed px-6 py-4'>
       <h3 className='text-2xl font-bold'>Add New Expense</h3>
@@ -31,4 +31,4 @@ const Expense = (props: Props) => {
   );
 };
 
-export default Expense;
+export default ExpenseForm;

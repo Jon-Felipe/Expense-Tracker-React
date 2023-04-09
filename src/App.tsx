@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Amounts from './components/amounts';
 import Transactions from './components/transactions';
-import Income from './components/income';
-import Expense from './components/expense';
+import IncomeForm from './components/income';
+import ExpenseForm from './components/expense';
 
 // extras
 import { ITransactionType, IAmountValues } from './utils/types';
@@ -36,8 +36,8 @@ const App = () => {
         />
 
         <div className='max-w-screen-lg mx-auto px-4 flex flex-col gap-4 md:flex-row'>
-          <Income />
-          <Expense />
+          <IncomeForm />
+          <ExpenseForm />
         </div>
 
         {/* Transactions */}

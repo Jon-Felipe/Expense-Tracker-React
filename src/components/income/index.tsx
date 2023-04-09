@@ -2,7 +2,7 @@ import React from 'react';
 
 type Props = {};
 
-const Income = (props: Props) => {
+const IncomeForm = (props: Props) => {
   return (
     <article className='w-full border-2 border-dashed px-6 py-4'>
       <h3 className='text-2xl font-bold'>Insert Income Value</h3>
@@ -29,4 +29,4 @@ const Income = (props: Props) => {
   );
 };
 
-export default Income;
+export default IncomeForm;
