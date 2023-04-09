@@ -10,10 +10,18 @@ type Props = {
 
 const Input = ({ LabelText, type, name, value, onChange }: Props) => {
   return (
-    <div>
-      <label htmlFor=''>{LabelText}</label>
-      <input type={type} name={name} value={value} onChange={onChange} />
-    </div>
+    <>
+      <label htmlFor='' className='text-base font-semibold'>
+        {LabelText}
+      </label>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        className='w-full border-2 px-4 py-2 rounded-lg'
+      />
+    </>
   );
 };
 
