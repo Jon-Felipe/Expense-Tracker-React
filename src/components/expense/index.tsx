@@ -1,6 +1,9 @@
 import React from 'react';
 import { BiDollarCircle } from 'react-icons/bi';
 
+// components
+import Input from '../ui/Input';
+
 type Props = {};
 
 const ExpenseForm = (props: Props) => {
@@ -9,19 +12,23 @@ const ExpenseForm = (props: Props) => {
       <h3 className='text-2xl font-bold'>Add New Expense</h3>
       <div>
         <div className='my-2'>
-          <h5 className='text-lg font-semibold'>Expense Name</h5>
-          <input
+          <Input
+            LabelText='Expense'
             type='text'
-            placeholder='e.g. Coffee'
-            className='w-full border-2 px-4 py-2 rounded-lg'
+            name='expense'
+            value=''
+            placeholder='e.g Coffee'
+            onChange={() => console.log('handle change')}
           />
         </div>
         <div className='my-2'>
-          <h5 className='text-lg font-semibold'>Amount</h5>
-          <input
+          <Input
+            LabelText='Amount'
             type='number'
-            placeholder='e.g. 3.50'
-            className='w-full border-2 px-4 py-2 rounded-lg'
+            name='amount'
+            value=''
+            placeholder='e.g 3.50'
+            onChange={() => console.log('handle change')}
           />
         </div>
       </div>
