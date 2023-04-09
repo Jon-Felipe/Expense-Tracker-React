@@ -19,7 +19,7 @@ const AmountBlurb = ({
 }: Props) => {
   return (
     <div
-      className={`w-60 h-24 rounded-xl flex items-center justify-evenly gap-2 shadow ${
+      className={`w-full rounded-xl flex items-center gap-4 shadow px-4 py-6 ${
         bgColour ? bgColour : 'bg-white'
       }`}
     >

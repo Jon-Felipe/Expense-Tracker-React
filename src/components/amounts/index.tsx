@@ -18,11 +18,7 @@ const Amounts = ({ balance, income, expense }: Props) => {
   const isAboveTabletScreen = useMediaQuery('(min-width: 865px)');
 
   return (
-    <section
-      className={`flex items-center justify-between w-11/12 max-w-screen-sm mx-auto py-10 ${
-        isAboveTabletScreen ? 'flex-row ' : 'flex-col gap-4 '
-      }`}
-    >
+    <section className='flex flex-col gap-4 md:flex-row max-w-screen-md mx-auto my-10'>
       <AmountBlurb
         type='Account Balance'
         value={balance.toString()}
