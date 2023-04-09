@@ -16,6 +16,7 @@ const IncomeForm = (props: Props) => {
           type='number'
           name='income'
           value=''
+          placeholder='e.g. Salary'
           onChange={() => console.log('handle change')}
         />
       </div>
@@ -25,6 +26,7 @@ const IncomeForm = (props: Props) => {
           type='number'
           name='amount'
           value=''
+          placeholder='$5500'
           onChange={() => console.log('handle change')}
         />
       </div>

@@ -5,10 +5,18 @@ type Props = {
   type: React.HTMLInputTypeAttribute;
   name: string | undefined;
   value: string | number | readonly string[] | undefined;
+  placeholder: string | undefined;
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
 };
 
-const Input = ({ LabelText, type, name, value, onChange }: Props) => {
+const Input = ({
+  LabelText,
+  type,
+  name,
+  value,
+  placeholder,
+  onChange,
+}: Props) => {
   return (
     <>
       <label htmlFor='' className='text-base font-semibold'>
@@ -19,6 +27,7 @@ const Input = ({ LabelText, type, name, value, onChange }: Props) => {
         name={name}
         value={value}
         onChange={onChange}
+        placeholder={placeholder}
         className='w-full border-2 px-4 py-2 rounded-lg'
       />
     </>
