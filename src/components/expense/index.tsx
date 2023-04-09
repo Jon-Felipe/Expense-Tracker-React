@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiDollarCircle } from 'react-icons/bi';
 
 type Props = {};
 
@@ -24,8 +25,11 @@ const ExpenseForm = (props: Props) => {
           />
         </div>
       </div>
-      <button className='bg-gray-900 text-white px-4 py-2 rounded-lg'>
+      <button className='flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg'>
         Create Expense
+        <span>
+          <BiDollarCircle className='w-6 h-6' />
+        </span>
       </button>
     </article>
   );
