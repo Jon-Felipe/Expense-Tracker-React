@@ -10,8 +10,15 @@ type Props = {
 };
 
 const IncomeForm = ({ setTransactions }: Props) => {
+  const handleSubmit = (e: React.FormEvent<EventTarget>) => {
+    e.preventDefault();
+  };
+
   return (
-    <article className='w-full border-2 border-dashed px-6 py-4'>
+    <form
+      className='w-full border-2 border-dashed px-6 py-4'
+      onSubmit={handleSubmit}
+    >
       <h3 className='text-2xl font-bold'>Add Income</h3>
       <div className='my-2'>
         <Input
@@ -33,13 +40,16 @@ const IncomeForm = ({ setTransactions }: Props) => {
           onChange={() => console.log('handle change')}
         />
       </div>
-      <button className='flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg'>
+      <button
+        type='submit'
+        className='flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg'
+      >
         Add Income
         <span>
           <BiDollarCircle className='w-6 h-6' />
         </span>
       </button>
-    </article>
+    </form>
   );
 };
 
