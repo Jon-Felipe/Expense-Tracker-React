@@ -13,3 +13,8 @@ export interface IAmountValues {
   income: number;
   expenses: number;
 }
+
+export interface IIncomeValues {
+  income: string;
+  amount: number;
+}

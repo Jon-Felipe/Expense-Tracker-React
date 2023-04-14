@@ -1,15 +1,30 @@
 import React from 'react';
 import { BiDollarCircle } from 'react-icons/bi';
-import { ITransactionType } from '../../utils/types';
+import { IIncomeValues, ITransactionType } from '../../utils/types';
 
 // components
 import Input from '../ui/Input';
 
 type Props = {
+  initialIncomeValues: IIncomeValues;
+  setIncomeValues: React.Dispatch<React.SetStateAction<IIncomeValues>>;
   setTransactions: React.Dispatch<React.SetStateAction<ITransactionType[]>>;
 };
 
-const IncomeForm = ({ setTransactions }: Props) => {
+const IncomeForm = ({
+  initialIncomeValues,
+  setTransactions,
+  setIncomeValues,
+}: Props) => {
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const name = e.currentTarget.name;
+    const value = e.currentTarget.value;
+
+    setIncomeValues((prevState) => {
+      return { ...prevState, [name]: value };
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
@@ -23,11 +38,11 @@ const IncomeForm = ({ setTransactions }: Props) => {
       <div className='my-2'>
         <Input
           LabelText='Income'
-          type='number'
+          type='text'
           name='income'
-          value=''
+          value={initialIncomeValues.income}
           placeholder='e.g. Salary'
-          onChange={() => console.log('handle change')}
+          onChange={handleChange}
         />
       </div>
       <div className='my-2'>
@@ -35,9 +50,9 @@ const IncomeForm = ({ setTransactions }: Props) => {
           LabelText='Amount'
           type='number'
           name='amount'
-          value=''
+          value={initialIncomeValues.amount}
           placeholder='$5500'
-          onChange={() => console.log('handle change')}
+          onChange={handleChange}
         />
       </div>
       <button

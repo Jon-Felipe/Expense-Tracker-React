@@ -10,7 +10,7 @@ import IncomeForm from './components/income';
 import ExpenseForm from './components/expense';
 
 // extras
-import { ITransactionType, IAmountValues } from './utils/types';
+import { ITransactionType, IAmountValues, IIncomeValues } from './utils/types';
 
 const initialAmountValues: IAmountValues = {
   balance: 0,
@@ -18,9 +18,16 @@ const initialAmountValues: IAmountValues = {
   expenses: 0,
 };
 
+const initialIncomeValues: IIncomeValues = {
+  income: '',
+  amount: 0,
+};
+
 const App = () => {
   const [amountValues, setAmountValues] =
     useState<IAmountValues>(initialAmountValues);
+  const [incomeValues, setIncomeValues] =
+    useState<IIncomeValues>(initialIncomeValues);
   const [transactions, setTransactions] = useState<ITransactionType[]>([]);
 
   return (
@@ -36,7 +43,11 @@ const App = () => {
         />
 
         <div className='max-w-screen-lg mx-auto px-4 flex flex-col gap-4 md:flex-row'>
-          <IncomeForm setTransactions={setTransactions} />
+          <IncomeForm
+            initialIncomeValues={incomeValues}
+            setIncomeValues={setIncomeValues}
+            setTransactions={setTransactions}
+          />
           <ExpenseForm setTransactions={setTransactions} />
         </div>
 
