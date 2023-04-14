@@ -3,7 +3,6 @@ export interface ITransactionType {
   type: string;
   transaction: {
     item: string;
-    description: string;
     amount: number;
     time: string;
   };
