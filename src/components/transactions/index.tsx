@@ -48,7 +48,6 @@ const Transactions = ({ transactions }: Props) => {
               id={id}
               type={type}
               item={transaction.item}
-              description={transaction.description}
               amount={transaction.amount}
               date={transaction.date}
             />

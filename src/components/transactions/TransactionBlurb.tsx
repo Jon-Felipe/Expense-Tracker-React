@@ -4,25 +4,16 @@ type Props = {
   id: number;
   type: string;
   item: string;
-  description: string;
   amount: number;
   date: Date;
 };
 
-const TransactionBlurb = ({
-  id,
-  type,
-  item,
-  description,
-  amount,
-  date,
-}: Props) => {
+const TransactionBlurb = ({ id, type, item, amount, date }: Props) => {
   const isExpense = type === 'expense';
   return (
     <article className='flex items-center justify-between bg-slate-50 my-4 p-6 rounded-xl shadow'>
       <div>
         <h3 className='text-lg font-bold tracking-wide mb-2'>{item}</h3>
-        <p className='text-gray-400 tracking-wider'>{description}</p>
       </div>
 
       <div>
