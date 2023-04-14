@@ -39,7 +39,7 @@ const IncomeForm = ({
           transaction: {
             item: income,
             amount: amount,
-            time: 'Today',
+            time: new Date(),
           },
         },
       ];
