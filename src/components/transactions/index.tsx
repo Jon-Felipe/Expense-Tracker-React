@@ -50,7 +50,7 @@ const Transactions = ({ transactions }: Props) => {
               item={transaction.item}
               description={transaction.description}
               amount={transaction.amount}
-              time={transaction.time}
+              date={transaction.date}
             />
           );
         })
