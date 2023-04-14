@@ -4,7 +4,7 @@ export interface ITransactionType {
   transaction: {
     item: string;
     amount: number;
-    time: string;
+    time: Date;
   };
 }
 
