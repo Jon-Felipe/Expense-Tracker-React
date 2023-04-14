@@ -10,7 +10,7 @@ type Props = {
 };
 
 const IncomeForm = ({ setTransactions }: Props) => {
-  const handleSubmit = (e: React.FormEvent<EventTarget>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
