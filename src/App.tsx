@@ -37,7 +37,7 @@ const App = () => {
 
         <div className='max-w-screen-lg mx-auto px-4 flex flex-col gap-4 md:flex-row'>
           <IncomeForm setTransactions={setTransactions} />
-          <ExpenseForm />
+          <ExpenseForm setTransactions={setTransactions} />
         </div>
 
         {/* Transactions */}
