@@ -44,6 +44,11 @@ const IncomeForm = ({
         },
       ];
     });
+
+    setIncomeValues({
+      income: '',
+      amount: 0,
+    });
   };
 
   return (
