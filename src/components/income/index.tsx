@@ -1,12 +1,15 @@
 import React from 'react';
 import { BiDollarCircle } from 'react-icons/bi';
+import { ITransactionType } from '../../utils/types';
 
 // components
 import Input from '../ui/Input';
 
-type Props = {};
+type Props = {
+  setTransactions: React.Dispatch<React.SetStateAction<ITransactionType[]>>;
+};
 
-const IncomeForm = (props: Props) => {
+const IncomeForm = ({ setTransactions }: Props) => {
   return (
     <article className='w-full border-2 border-dashed px-6 py-4'>
       <h3 className='text-2xl font-bold'>Add Income</h3>
