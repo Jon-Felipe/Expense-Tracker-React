@@ -6,7 +6,7 @@ type Props = {
   item: string;
   description: string;
   amount: number;
-  time: string;
+  time: Date;
 };
 
 const TransactionBlurb = ({
@@ -33,7 +33,7 @@ const TransactionBlurb = ({
         >
           {`${isExpense ? '-' : '+'}$${amount}`}
         </p>
-        <p className='text-gray-400'>{time}</p>
+        <p className='text-gray-400'>{time.toDateString()}</p>
       </div>
     </article>
   );
