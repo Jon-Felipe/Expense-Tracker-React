@@ -27,6 +27,23 @@ const IncomeForm = ({
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const { income, amount } = initialIncomeValues;
+
+    setTransactions((prevState) => {
+      return [
+        ...prevState,
+        {
+          id: Math.random(),
+          type: 'income',
+          transaction: {
+            item: income,
+            amount: amount,
+            time: 'Today',
+          },
+        },
+      ];
+    });
   };
 
   return (
