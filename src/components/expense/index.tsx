@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BiDollarCircle } from 'react-icons/bi';
-import { ITransactionType } from '../../utils/types';
+import { IExpenseValues, ITransactionType } from '../../utils/types';
 
 // components
 import Input from '../ui/Input';
@@ -9,13 +9,13 @@ type Props = {
   setTransactions: React.Dispatch<React.SetStateAction<ITransactionType[]>>;
 };
 
-const initialValues = {
+const initialValues: IExpenseValues = {
   expense: '',
   amount: 0,
 };
 
 const ExpenseForm = ({ setTransactions }: Props) => {
-  const [values, setValues] = useState(initialValues);
+  const [values, setValues] = useState<IExpenseValues>(initialValues);
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const name = e.currentTarget.name;
