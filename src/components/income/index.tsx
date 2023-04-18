@@ -31,6 +31,7 @@ const IncomeForm = ({
     const { income, amount } = initialIncomeValues;
 
     if (!income || !amount) {
+      alert('Please fill in the required fields');
       return;
     }
 
