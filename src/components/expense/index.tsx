@@ -22,6 +22,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
             value=''
             placeholder='e.g Coffee'
             onChange={() => console.log('handle change')}
+            required
           />
         </div>
         <div className='my-2'>
@@ -32,6 +33,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
             value=''
             placeholder='e.g 3.50'
             onChange={() => console.log('handle change')}
+            required
           />
         </div>
       </div>
