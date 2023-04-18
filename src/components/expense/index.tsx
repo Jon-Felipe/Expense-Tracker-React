@@ -28,6 +28,23 @@ const ExpenseForm = ({ setTransactions }: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const { expense, amount } = values;
+
+    setTransactions((prevState) => {
+      return [
+        ...prevState,
+        {
+          id: Math.random(),
+          type: 'expense',
+          transaction: {
+            item: expense,
+            amount: amount,
+            date: new Date(),
+          },
+        },
+      ];
+    });
   };
 
   return (
