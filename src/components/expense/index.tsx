@@ -17,6 +17,15 @@ const initialValues = {
 const ExpenseForm = ({ setTransactions }: Props) => {
   const [values, setValues] = useState(initialValues);
 
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const name = e.currentTarget.name;
+    const value = e.currentTarget.value;
+
+    setValues((prevState) => {
+      return { ...prevState, [name]: value };
+    });
+  };
+
   return (
     <article className='w-full border-2 border-dashed px-6 py-4'>
       <h3 className='text-2xl font-bold'>Add New Expense</h3>
@@ -28,7 +37,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
             name='expense'
             value={values.expense}
             placeholder='e.g Coffee'
-            onChange={() => console.log('handle change')}
+            onChange={handleChange}
             required
           />
         </div>
@@ -39,7 +48,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
             name='amount'
             value={values.amount}
             placeholder='e.g 3.50'
-            onChange={() => console.log('handle change')}
+            onChange={handleChange}
             required
           />
         </div>
