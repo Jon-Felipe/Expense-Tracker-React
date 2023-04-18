@@ -30,6 +30,10 @@ const IncomeForm = ({
 
     const { income, amount } = initialIncomeValues;
 
+    if (!income || !amount) {
+      return;
+    }
+
     setTransactions((prevState) => {
       return [
         ...prevState,
