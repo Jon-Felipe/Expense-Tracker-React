@@ -7,6 +7,7 @@ type Props = {
   value: string | number | readonly string[] | undefined;
   placeholder: string | undefined;
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  required: boolean | undefined;
 };
 
 const Input = ({
@@ -16,6 +17,7 @@ const Input = ({
   value,
   placeholder,
   onChange,
+  required,
 }: Props) => {
   return (
     <>
@@ -29,6 +31,7 @@ const Input = ({
         onChange={onChange}
         placeholder={placeholder}
         className='w-full border-2 px-4 py-2 rounded-lg'
+        required={required}
       />
     </>
   );

@@ -70,6 +70,7 @@ const IncomeForm = ({
           value={initialIncomeValues.income}
           placeholder='e.g. Salary'
           onChange={handleChange}
+          required
         />
       </div>
       <div className='my-2'>
@@ -80,6 +81,7 @@ const IncomeForm = ({
           value={initialIncomeValues.amount}
           placeholder='$5500'
           onChange={handleChange}
+          required
         />
       </div>
       <button
