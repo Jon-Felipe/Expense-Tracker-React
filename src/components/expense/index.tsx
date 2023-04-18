@@ -26,7 +26,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
             LabelText='Expense'
             type='text'
             name='expense'
-            value=''
+            value={values.expense}
             placeholder='e.g Coffee'
             onChange={() => console.log('handle change')}
             required
@@ -37,7 +37,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
             LabelText='Amount'
             type='number'
             name='amount'
-            value=''
+            value={values.amount}
             placeholder='e.g 3.50'
             onChange={() => console.log('handle change')}
             required
