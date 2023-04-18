@@ -31,6 +31,11 @@ const ExpenseForm = ({ setTransactions }: Props) => {
 
     const { expense, amount } = values;
 
+    if (!expense || !amount) {
+      alert('Please fill in the required fields');
+      return;
+    }
+
     setTransactions((prevState) => {
       return [
         ...prevState,
