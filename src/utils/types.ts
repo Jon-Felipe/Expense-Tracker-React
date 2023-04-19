@@ -8,12 +8,6 @@ export interface ITransactionType {
   };
 }
 
-export interface IAmountValues {
-  balance: number;
-  income: number;
-  expenses: number;
-}
-
 export interface IIncomeValues {
   income: string;
   amount: number;
