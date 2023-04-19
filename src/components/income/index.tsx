@@ -44,7 +44,7 @@ const IncomeForm = ({ setTransactions }: Props) => {
           type: 'income',
           transaction: {
             item: income,
-            amount: amount,
+            amount: +amount,
             date: new Date(),
           },
         },

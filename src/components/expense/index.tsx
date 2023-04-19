@@ -44,7 +44,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
           type: 'expense',
           transaction: {
             item: expense,
-            amount: amount,
+            amount: +amount,
             date: new Date(),
           },
         },

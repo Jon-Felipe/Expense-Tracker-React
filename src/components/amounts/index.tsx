@@ -14,13 +14,13 @@ const Amounts = ({ transactions }: Props) => {
   const income: number = transactions.reduce((acc, curr) => {
     if (curr.type !== 'income') return acc;
 
-    return (acc += Number(curr.transaction.amount));
+    return (acc += curr.transaction.amount);
   }, 0);
 
   const expense: number = transactions.reduce((acc, curr) => {
     if (curr.type !== 'expense') return acc;
 
-    return (acc += Number(curr.transaction.amount));
+    return (acc += curr.transaction.amount);
   }, 0);
 
   return (
