@@ -11,6 +11,18 @@ type Props = {
 };
 
 const Amounts = ({ transactions }: Props) => {
+  const income: number = transactions.reduce((acc, curr) => {
+    if (curr.type !== 'income') return acc;
+
+    return (acc += Number(curr.transaction.amount));
+  }, 0);
+
+  const expense: number = transactions.reduce((acc, curr) => {
+    if (curr.type !== 'income') return acc;
+
+    return (acc += Number(curr.transaction.amount));
+  }, 0);
+
   return (
     <section className='flex flex-col gap-4 md:flex-row my-10'>
       <AmountBlurb
