@@ -7,8 +7,7 @@ import Header from './components/Header';
 import Amounts from './components/amounts';
 import Transactions from './components/transactions';
 import IncomeForm from './components/income';
-// import ExpenseForm from './components/expense';
-import ExpenseForm from './components/ExpenseForm';
+import ExpenseForm from './components/expense';
 
 // extras
 import { ITransactionType, IAmountValues, IIncomeValues } from './utils/types';
@@ -43,20 +42,13 @@ const App = () => {
           expense={amountValues.expenses}
         />
 
-        <div>
-          {/* Income Form */}
-          <ExpenseForm />
-          {/* Expense Form */}
-          <ExpenseForm />
-        </div>
-
         <div className='max-w-screen-lg mx-auto px-4 flex flex-col gap-4 md:flex-row'>
-          {/* <IncomeForm
+          <IncomeForm
             initialIncomeValues={incomeValues}
             setIncomeValues={setIncomeValues}
             setTransactions={setTransactions}
-          /> */}
-          {/* <ExpenseForm setTransactions={setTransactions} /> */}
+          />
+          <ExpenseForm setTransactions={setTransactions} />
         </div>
 
         {/* Transactions */}
