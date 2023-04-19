@@ -11,17 +11,17 @@ type Props = {
 };
 
 const Amounts = ({ transactions }: Props) => {
-  const income: number = transactions.reduce((acc, curr) => {
-    if (curr.type !== 'income') return acc;
+  const income: number = transactions
+    .filter((item) => item.type === 'income')
+    .reduce((acc, curr) => {
+      return (acc += curr.transaction.amount);
+    }, 0);
 
-    return (acc += curr.transaction.amount);
-  }, 0);
-
-  const expense: number = transactions.reduce((acc, curr) => {
-    if (curr.type !== 'expense') return acc;
-
-    return (acc += curr.transaction.amount);
-  }, 0);
+  const expense: number = transactions
+    .filter((item) => item.type === 'expense')
+    .reduce((acc, curr) => {
+      return (acc += curr.transaction.amount);
+    }, 0);
 
   return (
     <section className='flex flex-col gap-4 md:flex-row my-10'>
