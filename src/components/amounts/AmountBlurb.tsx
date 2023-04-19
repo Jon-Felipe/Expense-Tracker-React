@@ -2,7 +2,7 @@ import React from 'react';
 
 type Props = {
   type: string;
-  value: string;
+  value: number;
   icon: React.ReactNode;
   typeColour?: string;
   bgColour?: string;
