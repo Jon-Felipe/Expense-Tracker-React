@@ -50,6 +50,7 @@ const IncomeForm = ({ setTransactions }: Props) => {
         },
       ];
     });
+    setValues(initialValues);
   };
 
   return (

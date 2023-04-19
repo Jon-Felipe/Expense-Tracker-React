@@ -50,6 +50,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
         },
       ];
     });
+    setValues(initialValues);
   };
 
   return (
