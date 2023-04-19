@@ -26,7 +26,7 @@ const Transactions = ({ transactions }: Props) => {
   };
 
   return (
-    <section className='w-11/12 max-w-screen-sm mx-auto py-5'>
+    <section className='py-5'>
       <div className='flex items-center justify-between'>
         <h3 className='text-3xl font-bold tracking-wide'>
           Recent Transactions

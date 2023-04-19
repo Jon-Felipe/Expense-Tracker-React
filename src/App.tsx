@@ -34,7 +34,7 @@ const App = () => {
     <>
       <Header />
 
-      <main>
+      <main className='w-11/12 max-w-screen-lg mx-auto'>
         {/* Amounts */}
         <Amounts
           balance={amountValues.income}
@@ -42,7 +42,7 @@ const App = () => {
           expense={amountValues.expenses}
         />
 
-        <div className='max-w-screen-lg mx-auto px-4 flex flex-col gap-4 md:flex-row'>
+        <div className='flex flex-col gap-4 md:flex-row'>
           <IncomeForm
             initialIncomeValues={incomeValues}
             setIncomeValues={setIncomeValues}

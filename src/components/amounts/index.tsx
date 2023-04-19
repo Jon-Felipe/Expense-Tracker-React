@@ -13,7 +13,7 @@ type Props = {
 
 const Amounts = ({ balance, income, expense }: Props) => {
   return (
-    <section className='flex flex-col gap-4 md:flex-row max-w-screen-md mx-auto my-10'>
+    <section className='flex flex-col gap-4 md:flex-row my-10'>
       <AmountBlurb
         type='Account Balance'
         value={balance.toString()}
