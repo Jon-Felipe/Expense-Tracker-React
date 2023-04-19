@@ -23,17 +23,15 @@ const App = () => {
     useState<IAmountValues>(initialAmountValues);
   const [transactions, setTransactions] = useState<ITransactionType[]>([]);
 
+  console.log(transactions, 'transactions');
+
   return (
     <>
       <Header />
 
       <main className='w-11/12 max-w-screen-lg mx-auto'>
         {/* Amounts */}
-        <Amounts
-          balance={amountValues.income}
-          income={amountValues.income}
-          expense={amountValues.expenses}
-        />
+        <Amounts transactions={transactions} />
 
         <div className='flex flex-col gap-4 md:flex-row'>
           <IncomeForm setTransactions={setTransactions} />
