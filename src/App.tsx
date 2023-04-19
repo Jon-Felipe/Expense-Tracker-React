@@ -10,20 +10,10 @@ import IncomeForm from './components/income';
 import ExpenseForm from './components/expense';
 
 // extras
-import { ITransactionType, IAmountValues } from './utils/types';
-
-const initialAmountValues: IAmountValues = {
-  balance: 0,
-  income: 0,
-  expenses: 0,
-};
+import { ITransactionType } from './utils/types';
 
 const App = () => {
-  const [amountValues, setAmountValues] =
-    useState<IAmountValues>(initialAmountValues);
   const [transactions, setTransactions] = useState<ITransactionType[]>([]);
-
-  console.log(transactions, 'transactions');
 
   return (
     <>
