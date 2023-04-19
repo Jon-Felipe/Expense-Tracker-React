@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BiDollarCircle } from 'react-icons/bi';
 import { IIncomeValues, ITransactionType } from '../../utils/types';
 
@@ -6,21 +6,22 @@ import { IIncomeValues, ITransactionType } from '../../utils/types';
 import Input from '../ui/Input';
 
 type Props = {
-  initialIncomeValues: IIncomeValues;
-  setIncomeValues: React.Dispatch<React.SetStateAction<IIncomeValues>>;
   setTransactions: React.Dispatch<React.SetStateAction<ITransactionType[]>>;
 };
 
-const IncomeForm = ({
-  initialIncomeValues,
-  setTransactions,
-  setIncomeValues,
-}: Props) => {
+const initialValues: IIncomeValues = {
+  income: '',
+  amount: 0,
+};
+
+const IncomeForm = ({ setTransactions }: Props) => {
+  const [values, setValues] = useState<IIncomeValues>(initialValues);
+
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     const name = e.currentTarget.name;
     const value = e.currentTarget.value;
 
-    setIncomeValues((prevState) => {
+    setValues((prevState) => {
       return { ...prevState, [name]: value };
     });
   };
@@ -28,7 +29,7 @@ const IncomeForm = ({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const { income, amount } = initialIncomeValues;
+    const { income, amount } = values;
 
     if (!income || !amount) {
       alert('Please fill in the required fields');
@@ -49,11 +50,6 @@ const IncomeForm = ({
         },
       ];
     });
-
-    setIncomeValues({
-      income: '',
-      amount: 0,
-    });
   };
 
   return (
@@ -67,7 +63,7 @@ const IncomeForm = ({
           LabelText='Income'
           type='text'
           name='income'
-          value={initialIncomeValues.income}
+          value={values.income}
           placeholder='e.g. Salary'
           onChange={handleChange}
           required
@@ -78,7 +74,7 @@ const IncomeForm = ({
           LabelText='Amount'
           type='number'
           name='amount'
-          value={initialIncomeValues.amount}
+          value={values.amount}
           placeholder='$5500'
           onChange={handleChange}
           required
