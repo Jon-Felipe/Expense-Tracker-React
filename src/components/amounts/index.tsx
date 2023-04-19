@@ -18,7 +18,7 @@ const Amounts = ({ transactions }: Props) => {
   }, 0);
 
   const expense: number = transactions.reduce((acc, curr) => {
-    if (curr.type !== 'income') return acc;
+    if (curr.type !== 'expense') return acc;
 
     return (acc += Number(curr.transaction.amount));
   }, 0);
@@ -27,13 +27,13 @@ const Amounts = ({ transactions }: Props) => {
     <section className='flex flex-col gap-4 md:flex-row my-10'>
       <AmountBlurb
         type='Account Balance'
-        value='0'
+        value={income - expense}
         icon={<FaMoneyBill className='w-10 h-10' />}
         typeColour='text-gray-400'
       />
       <AmountBlurb
         type='Income'
-        value='0'
+        value={income}
         icon={<FiArrowDown className='w-10 h-10 text-green-500' />}
         typeColour='text-white'
         bgColour='bg-green-500'
@@ -41,7 +41,7 @@ const Amounts = ({ transactions }: Props) => {
       />
       <AmountBlurb
         type='Expenses'
-        value='0'
+        value={expense}
         icon={<FiArrowUp className='w-10 h-10 text-red-500' />}
         typeColour='text-white'
         bgColour='bg-red-500'
