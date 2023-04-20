@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiEdit, FiTrash } from 'react-icons/fi';
 
 type Props = {
   id: number;
@@ -13,18 +14,26 @@ const TransactionBlurb = ({ id, type, item, amount, date }: Props) => {
   return (
     <article className='flex items-center justify-between bg-slate-50 my-4 p-6 rounded-xl shadow'>
       <div>
-        <h3 className='text-lg font-bold tracking-wide mb-2'>{item}</h3>
+        <h3 className='text-lg font-bold mb-2'>{item}</h3>
+        <div>
+          <p
+            className={`${
+              isExpense ? 'text-red-500' : 'text-green-500'
+            } font-bold text-lg mb-2`}
+          >
+            {`${isExpense ? '-' : '+'}$${amount}`}
+          </p>
+          <p className='text-gray-400'>{date.toDateString()}</p>
+        </div>
       </div>
 
-      <div>
-        <p
-          className={`${
-            isExpense ? 'text-red-500' : 'text-green-500'
-          } font-bold text-lg text-end mb-2`}
-        >
-          {`${isExpense ? '-' : '+'}$${amount}`}
-        </p>
-        <p className='text-gray-400'>{date.toDateString()}</p>
+      <div className='flex items-center gap-2'>
+        <button>
+          <FiEdit className='w-5 h-5' />
+        </button>
+        <button>
+          <FiTrash className='w-5 h-5' />
+        </button>
       </div>
     </article>
   );
