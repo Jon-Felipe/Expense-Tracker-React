@@ -18,20 +18,20 @@ const AmountBlurb = ({
   valueColour,
 }: Props) => {
   return (
-    <div
+    <article
       className={`w-full rounded-xl flex items-center gap-4 shadow px-4 py-6 ${
         bgColour ? bgColour : 'bg-white'
       }`}
     >
       <div className='p-1 bg-white rounded-lg'>{icon}</div>
 
-      <div>
+      <section>
         <h3 className={`text-base font-bold tracking-wide ${typeColour}`}>
           {type}
         </h3>
         <p className={`text-3xl ${valueColour}`}>${value}</p>
-      </div>
-    </div>
+      </section>
+    </article>
   );
 };
 
