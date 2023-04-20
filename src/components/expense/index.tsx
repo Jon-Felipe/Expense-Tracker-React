@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { BiDollarCircle } from 'react-icons/bi';
 import { IExpenseValues, ITransactionType } from '../../utils/types';
 
@@ -32,7 +33,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
     const { expense, amount } = values;
 
     if (!expense || !amount) {
-      alert('Please fill in the required fields');
+      toast.error('Please fill in the required fields');
       return;
     }
 
@@ -51,6 +52,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
       ];
     });
     setValues(initialValues);
+    toast.success('Expense Added');
   };
 
   return (
