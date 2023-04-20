@@ -1,6 +1,6 @@
 import { ITransactionType } from './types';
 
-export const getTotal = (
+export const calculateTotal = (
   transactions: ITransactionType[],
   transactionType: string
 ) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
 import { FaMoneyBill } from 'react-icons/fa';
-import { getTotal } from '../../utils/helper';
+import { calculateTotal } from '../../utils/helper';
 
 // components
 import AmountBlurb from './AmountBlurb';
@@ -12,8 +12,8 @@ type Props = {
 };
 
 const Amounts = ({ transactions }: Props) => {
-  const income: number = getTotal(transactions, 'income');
-  const expense: number = getTotal(transactions, 'expense');
+  const income: number = calculateTotal(transactions, 'income');
+  const expense: number = calculateTotal(transactions, 'expense');
 
   return (
     <section className='flex flex-col gap-4 md:flex-row my-10'>
