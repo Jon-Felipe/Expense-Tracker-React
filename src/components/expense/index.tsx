@@ -32,7 +32,7 @@ const ExpenseForm = ({ setTransactions }: Props) => {
 
     const { expense, amount } = values;
 
-    if (!expense || !amount) {
+    if (!expense.trim() || !amount) {
       toast.error('Please fill in the required fields');
       return;
     }
