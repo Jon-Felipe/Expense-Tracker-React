@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
 import { FaMoneyBill } from 'react-icons/fa';
+import { getTotal } from '../../utils/helper';
 
 // components
 import AmountBlurb from './AmountBlurb';
@@ -11,17 +12,8 @@ type Props = {
 };
 
 const Amounts = ({ transactions }: Props) => {
-  const income: number = transactions
-    .filter((item) => item.type === 'income')
-    .reduce((acc, curr) => {
-      return (acc += curr.transaction.amount);
-    }, 0);
-
-  const expense: number = transactions
-    .filter((item) => item.type === 'expense')
-    .reduce((acc, curr) => {
-      return (acc += curr.transaction.amount);
-    }, 0);
+  const income: number = getTotal(transactions, 'income');
+  const expense: number = getTotal(transactions, 'expense');
 
   return (
     <section className='flex flex-col gap-4 md:flex-row my-10'>
