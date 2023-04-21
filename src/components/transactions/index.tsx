@@ -1,8 +1,8 @@
 import React from 'react';
 
 // components
-import TransactionBlurb from './TransactionBlurb';
 import Pill from '../ui/Pill';
+import Table from '../ui/Table';
 
 // extras
 import { ITransactionType } from '../../utils/types';
@@ -26,8 +26,8 @@ const Transactions = ({ transactions }: Props) => {
   };
 
   return (
-    <section className='py-5 max-w-screen-sm mx-auto'>
-      <div className='flex items-center justify-between'>
+    <section className='py-5'>
+      <div className='flex items-center justify-between mb-4'>
         <h3 className='text-3xl font-bold tracking-wide'>
           Recent Transactions
         </h3>
@@ -40,19 +40,7 @@ const Transactions = ({ transactions }: Props) => {
         />
       </div>
       {transactions.length > 0 ? (
-        transactions.map((t) => {
-          const { id, type, transaction } = t;
-          return (
-            <TransactionBlurb
-              key={id}
-              id={id}
-              type={type}
-              item={transaction.item}
-              amount={transaction.amount}
-              date={transaction.date}
-            />
-          );
-        })
+        <Table transactions={transactions} />
       ) : (
         <NoTransactions />
       )}
